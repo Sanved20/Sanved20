@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+class Solution {
+    public int kthFactor(int n, int k) {
+       // Create a list of all factors of n.
+       ArrayList<Integer> factorList = new ArrayList<>();
+
+       int i;
+
+       for(i = 1; i <= n; i++) {
+
+           if((n % i) == 0){
+            
+            // It's a factor.
+            factorList.add(i);
+
+           } 
+
+       }
+
+       System.out.println(factorList);
+       
+       // If the size of the list is less than k, return -1.
+       if(factorList.size() < k) {
+           return -1;
+       } else {
+          // Return the kth value from the list.
+          return factorList.get(k - 1);
+       }
+
+    }
+}
