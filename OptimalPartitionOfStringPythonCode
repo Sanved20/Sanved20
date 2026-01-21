@@ -1,0 +1,39 @@
+class Solution(object):
+    def partitionString(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+    
+        # Create a list of all the substrings.
+        subStringList = [];
+
+        # Create substring with first character at index 0.
+        sub = s[0] + "";
+
+        for i in range(1, len(s)):
+            c = s[i];
+            # Check if the substring contains the character c.
+            if c not in sub:
+                # Add character c to the substring if the substring 
+                # Does not contain the character c.
+                sub = sub + c;
+            else:
+                # Substring is complete.
+                print(sub);
+                # Add substring to the substring list.
+                subStringList.append(sub);
+                # Start a new substring.
+                sub = c + "";
+    
+        # Add substring to the substring list.
+        subStringList.append(sub);
+        # Substring is complete.
+        print(sub);
+        # Return the substring list.
+        return len(subStringList);
+
+    
+
+
+        
