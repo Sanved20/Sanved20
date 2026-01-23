@@ -1,0 +1,20 @@
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+
+        # Creating a hashmap that stores the key as the 
+        # Number and the value as the number of occurrences.
+        counter = Counter(arr);
+        s = set();
+
+        # Iterating through the counter values and the number of occurrences.
+        for v in counter.values():
+            # If there is duplicate frequency in the set, return false.
+            if v in s:
+                return False;
+            else:
+                s.add(v);
+        
+        return True;
+            
+
+        
